@@ -15,12 +15,14 @@
     }
   };
   sendMail = function(commit) {
-    return nodemailer.send_mail({
+    console.log('script entered the mailer function');
+    nodemailer.send_mail({
       sender: 'Max & Matt',
       to: 'matthewpiskorz@gmail.com',
       subject: 'Pivotal Tracker Bug Report',
       body: "Commit Number: " + commit.id + "\n\nCommit Message: " + commit.message
     });
+    return console.log('script exited the mailer function');
   };
   nodemailer.SMTP = {
     host: 'smtp.gmail.com',
